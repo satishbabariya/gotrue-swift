@@ -298,7 +298,6 @@ public struct UserIdentity: Codable, Hashable, Identifiable, Sendable {
 }
 
 public enum Provider: String, Codable, CaseIterable, Sendable {
-  case apple
   case azure
   case bitbucket
   case discord
@@ -340,7 +339,7 @@ public struct OpenIDConnectCredentials: Codable, Hashable, Sendable {
   public var gotrueMetaSecurity: GoTrueMetaSecurity?
 
   public init(
-    provider: Provider? = nil,
+    provider: Provider?,
     idToken: String,
     accessToken: String? = nil,
     nonce: String? = nil,
